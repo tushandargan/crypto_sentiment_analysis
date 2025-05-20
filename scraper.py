@@ -1,18 +1,16 @@
 import praw
 import pandas as pd
-from datetime import datetime, timedelta
-import os
-from dotenv import load_dotenv
+from datetime import datetime
 
 # Load environment variables
-load_dotenv()
+# load_dotenv()
 
 class RedditScraper:
     def __init__(self):
         self.reddit = praw.Reddit(
-            client_id=os.getenv('REDDIT_CLIENT_ID'),
-            client_secret=os.getenv('REDDIT_CLIENT_SECRET'),
-            user_agent=os.getenv('REDDIT_USER_AGENT')
+            client_id="jXX2VEPMJFdKyev91PPiPg",
+            client_secret="50irwUF0V3-_pzwDosy2Jk1AlQegwg",
+            user_agent="my_app/0.1 by u/LieSilent5603"
         )
         
     def get_crypto_posts(self, coin_name, start_date, end_date, subreddits=['cryptocurrency', 'CryptoMarkets', 'CryptoCurrency']):
